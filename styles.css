@@ -1,0 +1,99 @@
+/* Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #111;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.ballet {
+    font-family: 'Ballet', cursive;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+}
+
+h1.title {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0;
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: 400;
+    margin-top: 4rem;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.work {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.work-item {
+    margin-bottom: 5rem;
+}
+
+.work-item img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+.work-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    opacity: 0.6;
+}
+
+.research {
+    width: 80%;
+    margin: 5rem auto;
+}
+
+.research ul {
+    list-style: none;
+    padding: 0;
+}
+
+.research li {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+  
