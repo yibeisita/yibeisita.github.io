@@ -50,6 +50,18 @@ a:hover {
     padding: 2.5rem;
 }
 
+@media (max-width: 768px) {
+    .last-name {
+        display: none;
+    }
+}
+  
+@media (min-width: 769px) {
+    .last-name {
+        display: inline;
+    }
+}
+
 .ballet {
     font-family: 'Ballet', cursive;
     font-size: 3.5rem;
