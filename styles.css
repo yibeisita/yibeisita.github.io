@@ -74,6 +74,19 @@ a:hover {
     font-weight: 300;
     letter-spacing: 0.02em;
     color: #666;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
+}
+
+.intro-subtitle.is-leaving {
+    opacity: 0;
+    filter: blur(2px);
+}
+
+.intro-subtitle[data-script="braille"] {
+    font-family: 'Apple Braille', 'Segoe UI Symbol', 'DejaVu Sans', 'Jost', sans-serif;
+    letter-spacing: 0.1em;
 }
 
 .intro-body {
