@@ -3,51 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio | Neurocomputation & AI</title>
+  <title>Projects | Yibei Wang Chen</title>
+  <meta name="description" content="Selected projects in computational neuroscience and AI by Yibei Wang Chen.">
 
   <link rel="icon" href="personal-favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="projects-page fade-on-load">
-  <header>
-    <div class="topbar">
-      <span>01</span>
-      <span>projects</span>
-    </div>
-    <h1 class="title"><span class="ballet">Selected Projects</span></h1>
+
+  <header class="projects-topbar">
+    <a href="index.html" class="back-link">← home</a>
+    <span class="projects-label">projects</span>
   </header>
 
-  <main style="flex: 1;">
-    <section class="work">
-      <div class="work-grid">
-        <!-- Hodgkin-Huxley Neuron Simulation -->
-        <div class="work-item">
-          <p class="subtitle">Hodgkin-Huxley Neuron Simulation & Bayesian Parameter Estimation</p>
-          <div class="work-meta">
-            <span>Python, Jupyter, Bayesian Inference</span>
-            <span>2025 / Computational Neuroscience</span>
-          </div>
-          <p>Simulated Hodgkin-Huxley neuron dynamics using Python notebooks and estimated neuron parameters via Bayesian inference.</p>
-          <a href="https://github.com/yibeisita/Hodgkin-Huxley-Simulation" class="link" target="_blank">View the project →</a>
-        </div>
-  
-        <!-- Neuro AI Playground -->
-        <div class="work-item">
-          <p class="subtitle">Neuro-AI Playground: EEG & fMRI Analysis</p>
-          <div class="work-meta">
-            <span>Python, MNE, Nilearn, ML</span>
-            <span>2025 - On Going / Brain Data & AI</span>
-          </div>
-          <p>Interactive Python lab exploring EEG, MEG, and fMRI datasets with MNE, Nilearn, and machine learning to model brain activity.</p>
-          <a href="https://github.com/yibeisita/neuro-ai-playground" class="link" target="_blank">View the project →</a>
-        </div>
-      </div>
-    </section>
+  <main class="projects-grid" aria-label="Selected projects">
+
+    <a class="grid-cell filled" href="https://github.com/yibeisita/Hodgkin-Huxley-Simulation" target="_blank" rel="noopener" style="--i: 0">
+      <span class="cell-index">00</span>
+      <h2
+        class="cell-title lang-cycle"
+        data-phrases='[
+          {"lang":"en","text":"Hodgkin–Huxley Simulation"},
+          {"lang":"zh","text":"霍奇金—赫胥黎模拟"},
+          {"lang":"it","text":"Simulazione Hodgkin–Huxley"},
+          {"lang":"es","text":"Simulación Hodgkin–Huxley"},
+          {"lang":"fr","text":"Simulation Hodgkin–Huxley"},
+          {"lang":"braille","text":"⠓⠕⠙⠛⠅⠊⠝⠤⠓⠥⠭⠇⠑⠽⠀⠎⠊⠍⠥⠇⠁⠞⠊⠕⠝"}
+        ]'
+      >Hodgkin–Huxley Simulation</h2>
+      <ul class="cell-desc">
+        <li>Neuron dynamics modeling</li>
+        <li>Bayesian parameter estimation</li>
+        <li>Python · Jupyter</li>
+      </ul>
+    </a>
+
+    <div class="grid-cell empty" style="--i: 1" aria-hidden="true">
+      <span class="cell-index">01</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 2" aria-hidden="true">
+      <span class="cell-index">02</span>
+    </div>
+
+    <a class="grid-cell filled" href="https://github.com/yibeisita/i-love-you-10k" target="_blank" rel="noopener" style="--i: 3">
+      <span class="cell-index">03</span>
+      <h2
+        class="cell-title lang-cycle"
+        data-phrases='[
+          {"lang":"en","text":"I Love You 10k"},
+          {"lang":"zh","text":"我爱你一万"},
+          {"lang":"it","text":"Ti Amo 10k"},
+          {"lang":"es","text":"Te Quiero 10k"},
+          {"lang":"fr","text":"Je T’aime 10k"},
+          {"lang":"braille","text":"⠊⠀⠇⠕⠧⠑⠀⠽⠕⠥⠀⠼⠁⠚⠅"}
+        ]'
+      >I Love You 10k</h2>
+      <ul class="cell-desc">
+        <li>10,000-hour skill mastery tracker</li>
+        <li>Deliberate practice · reflection cycles</li>
+        <li>Local-first web app</li>
+      </ul>
+    </a>
+
+    <div class="grid-cell empty" style="--i: 4" aria-hidden="true">
+      <span class="cell-index">04</span>
+    </div>
+
+    <a class="grid-cell filled" href="https://github.com/yibeisita/neuro-ai-playground" target="_blank" rel="noopener" style="--i: 5">
+      <span class="cell-index">05</span>
+      <h2
+        class="cell-title lang-cycle"
+        data-phrases='[
+          {"lang":"en","text":"Neuro-AI Playground"},
+          {"lang":"zh","text":"神经AI游乐场"},
+          {"lang":"it","text":"Parco Giochi Neuro-AI"},
+          {"lang":"es","text":"Parque Neuro-AI"},
+          {"lang":"fr","text":"Aire de Jeu Neuro-AI"},
+          {"lang":"braille","text":"⠝⠑⠥⠗⠕⠤⠁⠊⠀⠏⠇⠁⠽⠛⠗⠕⠥⠝⠙"}
+        ]'
+      >Neuro-AI Playground</h2>
+      <ul class="cell-desc">
+        <li>EEG · MEG · fMRI analysis</li>
+        <li>MNE · Nilearn · ML</li>
+        <li>Interactive brain data lab</li>
+      </ul>
+    </a>
+
+    <div class="grid-cell empty" style="--i: 6" aria-hidden="true">
+      <span class="cell-index">06</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 7" aria-hidden="true">
+      <span class="cell-index">07</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 8" aria-hidden="true">
+      <span class="cell-index">08</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 9" aria-hidden="true">
+      <span class="cell-index">09</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 10" aria-hidden="true">
+      <span class="cell-index">10</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 11" aria-hidden="true">
+      <span class="cell-index">11</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 12" aria-hidden="true">
+      <span class="cell-index">12</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 13" aria-hidden="true">
+      <span class="cell-index">13</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 14" aria-hidden="true">
+      <span class="cell-index">14</span>
+    </div>
+
+    <div class="grid-cell empty" style="--i: 15" aria-hidden="true">
+      <span class="cell-index">15</span>
+    </div>
+
   </main>
 
-  <footer>
-    <p>© 2025 Yibei Wang Chen — AI Engineer | Neurocomputation</p>
+  <footer class="projects-footer">
+    <p>© 2026 Yibei Wang Chen</p>
   </footer>
+
+  <script src="lang-cycle.js" defer></script>
 </body>
 </html>
