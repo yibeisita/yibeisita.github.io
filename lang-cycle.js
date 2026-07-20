@@ -2,6 +2,7 @@
  * Cycles text through languages with a soft fade.
  * Mark elements with class "lang-cycle" and a data-phrases JSON array.
  * Optional parent .lang-cycle-group fades with the text (e.g. name stays fixed).
+ * Reserves a fixed box sized to the largest language so layout doesn't jump.
  */
 (function () {
   const INTERVAL_MS = 10000;
@@ -48,8 +49,13 @@
       if (nameEl) {
         if (phrase.lang === 'zh') {
           nameEl.textContent = nameEl.dataset.nameZh || '王怡北';
-          nameEl.classList.remove('ballet');
+          nameEl.classList.remove('ballet', 'display-name-braille');
           nameEl.classList.add('display-name-zh');
+        } else if (phrase.lang === 'braille') {
+          nameEl.textContent =
+            nameEl.dataset.nameBraille || '⠽⠊⠃⠑⠊';
+          nameEl.classList.remove('ballet', 'display-name-zh');
+          nameEl.classList.add('display-name-braille');
         } else {
           const latin = nameEl.dataset.nameEn || 'Yibei Wang Chen';
           const [first, ...rest] = latin.split(' ');
@@ -59,25 +65,63 @@
               ? '<span class="last-name"> ' + rest.join(' ') + '</span>'
               : '');
           nameEl.classList.add('ballet');
-          nameEl.classList.remove('display-name-zh');
+          nameEl.classList.remove('display-name-zh', 'display-name-braille');
         }
       }
     };
 
-    setPhrase(phrases[0]);
+    const lockSize = () => {
+      const wasLeaving = target.classList.contains('is-leaving');
+      target.classList.remove('is-leaving');
+      target.style.minWidth = '';
+      target.style.minHeight = '';
 
-    const tick = () => {
-      target.classList.add('is-leaving');
-      window.setTimeout(() => {
-        index = pickNext(phrases.length, index);
-        setPhrase(phrases[index]);
-        target.classList.remove('is-leaving');
-      }, FADE_MS);
+      let maxW = 0;
+      let maxH = 0;
+
+      phrases.forEach((phrase) => {
+        setPhrase(phrase);
+        const rect = target.getBoundingClientRect();
+        maxW = Math.max(maxW, rect.width);
+        maxH = Math.max(maxH, rect.height);
+      });
+
+      setPhrase(phrases[index]);
+      target.style.minWidth = Math.ceil(maxW) + 'px';
+      target.style.minHeight = Math.ceil(maxH) + 'px';
+
+      if (wasLeaving) target.classList.add('is-leaving');
     };
 
-    window.setTimeout(() => {
-      tick();
-      window.setInterval(tick, INTERVAL_MS);
-    }, delay + 2200);
+    const start = () => {
+      setPhrase(phrases[0]);
+      lockSize();
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(lockSize, 150);
+      });
+
+      const tick = () => {
+        target.classList.add('is-leaving');
+        window.setTimeout(() => {
+          index = pickNext(phrases.length, index);
+          setPhrase(phrases[index]);
+          target.classList.remove('is-leaving');
+        }, FADE_MS);
+      };
+
+      window.setTimeout(() => {
+        tick();
+        window.setInterval(tick, INTERVAL_MS);
+      }, delay + 2200);
+    };
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(start);
+    } else {
+      start();
+    }
   });
 })();

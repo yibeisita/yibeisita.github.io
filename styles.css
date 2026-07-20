@@ -32,12 +32,11 @@ a:hover {
     ============================== */
 
 .intro-page {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    position: relative;
 }
 
 .intro-page.light {
@@ -45,14 +44,58 @@ a:hover {
     color: #000;
 }
 
-.intro-text h1 {
-    font-size: 3rem;
-    font-weight: 300;
-    margin: 0;
+.intro-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    padding-bottom: 5rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 }
 
-.intro-container {
-    padding: 2.5rem;
+.intro-title {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.25;
+    align-self: flex-start;
+}
+
+.intro-header {
+    align-self: flex-start;
+}
+
+.intro-subtitle {
+    margin: 0.6rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: #666;
+}
+
+.intro-body {
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: clamp(1rem, 8vh, 4rem);
+}
+
+.intro-desc {
+    font-size: 1.05rem;
+    margin: 0;
+    line-height: 1.65;
+}
+
+.intro-desc-lead {
+    max-width: min(52rem, 92%);
+}
+
+.intro-desc-more {
+    max-width: min(52rem, 92%);
+    margin-top: 1.1em;
+    margin-bottom: 1.1em;
 }
 
 @media (max-width: 768px) {
@@ -69,27 +112,18 @@ a:hover {
 
 .ballet {
     font-family: 'Ballet', cursive;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
     letter-spacing: 0.05em;
     display: inline-block;
 }
 
-.intro-desc {
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    line-height: 1.6;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .cta {
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .view-projects {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 300;
     border-bottom: 1px solid #000;
     padding-bottom: 0.2rem;
@@ -107,8 +141,9 @@ a:hover {
 .home-footer {
     position: absolute;
     bottom: 1.5rem;
-    width: 100%;
-    text-align: center;
+    left: clamp(2rem, 5vw, 3.5rem);
+    width: auto;
+    text-align: left;
     font-size: 0.85rem;
     color: #555;
     animation: fadePageIn 1.5s ease forwards;
@@ -129,7 +164,11 @@ a:hover {
 @media (max-width: 600px) {
     .home-footer {
         position: static;
-        padding: 0; 
+        padding: 0 clamp(2rem, 5vw, 3.5rem) 1.5rem;
+    }
+
+    .intro-container {
+        padding-bottom: 2rem;
     }
 }
 
@@ -222,6 +261,13 @@ h1 .lang-cycle {
 
 h1 .lang-cycle-group {
     display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.cell-title.lang-cycle {
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .display-name-zh {
@@ -229,6 +275,14 @@ h1 .lang-cycle-group {
     font-size: inherit;
     font-weight: inherit;
     letter-spacing: 0.06em;
+    display: inline;
+}
+
+.display-name-braille {
+    font-family: 'Apple Braille', 'Segoe UI Symbol', 'DejaVu Sans', 'Jost', sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: 0.12em;
     display: inline;
 }
 
