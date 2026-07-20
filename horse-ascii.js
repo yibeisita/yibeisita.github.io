@@ -1,5 +1,5 @@
 /**
- * Dot-grid horse silhouette sampled from assets/horse-dots.png,
+ * Dot-grid horse silhouette,
  * with a light gallop cycle on the legs.
  */
 (function () {

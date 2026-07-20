@@ -3,7 +3,7 @@
  * Mark elements with class "lang-cycle" and a data-phrases JSON array.
  * Optional parent .lang-cycle-group fades with the text (e.g. name stays fixed).
  * Optional .intro-subtitle with data-subtitles maps language → text.
- * Reserves a fixed box sized to the largest language so layout doesn't jump.
+ * Reserves a fixed width sized to the largest language so horizontal layout doesn't jump.
  */
 (function () {
   const INTERVAL_MS = 10000;
@@ -120,7 +120,6 @@
       }
 
       let maxW = 0;
-      let maxH = 0;
       let maxSubW = 0;
       let maxSubH = 0;
 
@@ -128,7 +127,6 @@
         setPhrase(phrase);
         const rect = target.getBoundingClientRect();
         maxW = Math.max(maxW, rect.width);
-        maxH = Math.max(maxH, rect.height);
         if (subtitleEl && phrase.lang !== 'zh') {
           const subRect = subtitleEl.getBoundingClientRect();
           maxSubW = Math.max(maxSubW, subRect.width);
@@ -140,8 +138,10 @@
       lockedSubH = Math.ceil(maxSubH);
 
       setPhrase(phrases[index]);
+      // Only lock width — locking height pushes the subtitle away from the title
+      // when phrases wrap differently across languages (especially on narrow screens).
       target.style.minWidth = Math.ceil(maxW) + 'px';
-      target.style.minHeight = Math.ceil(maxH) + 'px';
+      target.style.minHeight = '';
       if (subtitleEl && phrases[index].lang !== 'zh') {
         subtitleEl.style.minWidth = lockedSubW + 'px';
         subtitleEl.style.minHeight = lockedSubH + 'px';

@@ -132,6 +132,9 @@ a:hover {
 
 .intro-header {
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .intro-subtitle {
@@ -180,6 +183,15 @@ a:hover {
 @media (max-width: 768px) {
     .last-name {
         display: none;
+    }
+
+    .intro-container {
+        justify-content: flex-start;
+        gap: 2.5rem;
+    }
+
+    .intro-body {
+        margin-bottom: 1.5rem;
     }
 }
   
