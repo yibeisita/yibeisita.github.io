@@ -217,7 +217,8 @@ a:hover {
 }
 
 .view-projects {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     font-size: 1.15rem;
     font-weight: 300;
     border-bottom: 1px solid #000;
